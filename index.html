@@ -3,39 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BrightFuture Academy</title>
+    <title>Northview College</title>
     <style>
       :root {
-        --primary: #123d72;
-        --secondary: #f4b400;
-        --accent: #eaf2ff;
-        --text: #1d1d1d;
-        --muted: #5c6470;
+        --primary: #0d3b66;
+        --secondary: #f9a826;
+        --accent: #eaf5ff;
+        --dark: #12263a;
+        --text: #1f2937;
+        --muted: #5d6b7a;
         --white: #ffffff;
-        --shadow: rgba(18, 61, 114, 0.12);
+        --shadow: rgba(13, 59, 102, 0.12);
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
+        background: #f5f8fc;
         color: var(--text);
-        background: #f6f9ff;
         line-height: 1.6;
       }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+      a { text-decoration: none; color: inherit; }
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
+      img { max-width: 100%; display: block; }
 
       .container {
         width: min(1120px, 90%);
@@ -51,7 +44,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 14px 0;
+        padding: 12px 0;
         font-size: 0.9rem;
       }
 
@@ -59,12 +52,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 18px 0 22px;
+        padding: 20px 0 22px;
       }
 
       .brand {
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-size: 2rem;
+        font-weight: 800;
       }
 
       .menu {
@@ -77,42 +70,42 @@
 
       .menu a {
         color: var(--white);
-        font-weight: 600;
+        font-weight: 700;
       }
 
       .cta {
+        display: inline-block;
         background: var(--secondary);
         color: var(--primary);
-        padding: 12px 24px;
+        padding: 12px 22px;
         border-radius: 30px;
-        font-weight: 700;
-        display: inline-block;
+        font-weight: 800;
       }
 
       .hero {
-        background: linear-gradient(rgba(18, 61, 114, 0.82), rgba(18, 61, 114, 0.82)),
-          url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        background: linear-gradient(rgba(13, 59, 102, 0.8), rgba(13, 59, 102, 0.8)),
+          url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
         color: var(--white);
-        padding: 100px 0;
+        padding: 110px 0;
       }
 
       .hero-content {
         display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        align-items: center;
+        grid-template-columns: 1.2fr 0.8fr;
         gap: 40px;
+        align-items: center;
       }
 
       .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4.2rem);
-        line-height: 1.1;
+        font-size: clamp(2.7rem, 5vw, 4.4rem);
+        line-height: 1.08;
         margin: 0 0 18px;
       }
 
       .hero p {
-        font-size: 1.07rem;
-        max-width: 620px;
-        margin-bottom: 28px;
+        font-size: 1.05rem;
+        max-width: 640px;
+        margin-bottom: 30px;
       }
 
       .hero-actions {
@@ -126,49 +119,46 @@
         color: var(--primary);
       }
 
-      .hero-card {
-        background: rgba(255, 255, 255, 0.12);
+      .hero-panel {
+        background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(4px);
         border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+        padding: 30px;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
       }
 
-      .hero-card h3 {
+      .hero-panel h3 {
         margin-top: 0;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
-      .promo-list {
+      .hero-panel ul {
         list-style: none;
         padding: 0;
         margin: 18px 0 0;
       }
 
-      .promo-list li {
+      .hero-panel li {
         margin: 10px 0;
-        font-weight: 600;
+        font-weight: 700;
       }
 
-      section {
-        padding: 80px 0;
-      }
+      section { padding: 80px 0; }
 
       .section-title {
         text-align: center;
-        margin-bottom: 45px;
+        margin-bottom: 42px;
       }
 
       .section-title h2 {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        margin-bottom: 12px;
+        font-size: clamp(2.1rem, 4vw, 3rem);
+        margin: 0 0 12px;
       }
 
       .section-title p {
-        color: var(--muted);
         max-width: 700px;
         margin: 0 auto;
+        color: var(--muted);
       }
 
       .stats {
@@ -179,29 +169,28 @@
 
       .stat {
         background: var(--white);
-        padding: 28px 20px;
         border-radius: 16px;
+        padding: 28px 18px;
         text-align: center;
-        box-shadow: 0 10px 24px var(--shadow);
+        box-shadow: 0 12px 24px var(--shadow);
       }
 
       .stat strong {
         display: block;
-        font-size: 2rem;
         color: var(--primary);
+        font-size: 2.3rem;
       }
 
       .about-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 35px;
-        align-items: center;
+        gap: 30px;
       }
 
       .about-box {
         background: var(--white);
+        border-radius: 18px;
         padding: 30px;
-        border-radius: 20px;
         box-shadow: 0 12px 25px var(--shadow);
       }
 
@@ -221,24 +210,21 @@
         background: var(--white);
         border-radius: 18px;
         padding: 28px 22px;
-        box-shadow: 0 10px 24px var(--shadow);
-      }
-
-      .card h3 {
-        margin-top: 0;
-        color: var(--primary);
+        box-shadow: 0 10px 22px var(--shadow);
       }
 
       .badge {
         display: inline-block;
+        margin-bottom: 16px;
         background: var(--accent);
         color: var(--primary);
-        padding: 8px 12px;
+        padding: 7px 12px;
         border-radius: 999px;
         font-size: 0.8rem;
         font-weight: 700;
-        margin-bottom: 16px;
       }
+
+      .card h3 { margin-top: 0; color: var(--primary); }
 
       .news-grid {
         display: grid;
@@ -250,7 +236,7 @@
         background: var(--white);
         border-radius: 18px;
         padding: 24px;
-        box-shadow: 0 10px 24px var(--shadow);
+        box-shadow: 0 10px 22px var(--shadow);
       }
 
       .noticeboard ul {
@@ -260,22 +246,20 @@
       }
 
       .noticeboard li {
-        padding: 14px 0;
-        border-bottom: 1px solid #e9edf5;
         display: flex;
         justify-content: space-between;
         gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid #edf1f7;
       }
 
-      .noticeboard li:last-child {
-        border-bottom: 0;
-      }
+      .noticeboard li:last-child { border-bottom: none; }
 
       .date-pill {
         background: var(--accent);
         color: var(--primary);
-        padding: 5px 10px;
         border-radius: 8px;
+        padding: 5px 10px;
         font-size: 0.75rem;
         font-weight: 700;
         white-space: nowrap;
@@ -290,9 +274,9 @@
       .info-box,
       .feedback-form {
         background: var(--white);
-        padding: 28px;
         border-radius: 18px;
-        box-shadow: 0 10px 24px var(--shadow);
+        padding: 28px;
+        box-shadow: 0 10px 20px var(--shadow);
       }
 
       .feedback-form form {
@@ -304,8 +288,8 @@
       .feedback-form textarea {
         width: 100%;
         padding: 12px 14px;
+        border: 1px solid #dfe6ef;
         border-radius: 10px;
-        border: 1px solid #dfe7f3;
         font: inherit;
       }
 
@@ -321,19 +305,19 @@
       }
 
       footer {
-        background: #0d2340;
+        background: #0b213d;
         color: var(--white);
-        padding: 30px 0;
         text-align: center;
+        padding: 30px 0;
       }
 
       @media (max-width: 860px) {
         .hero-content,
         .about-grid,
-        .news-grid,
-        .contact-wrap,
         .cards,
-        .stats {
+        .stats,
+        .news-grid,
+        .contact-wrap {
           grid-template-columns: 1fr;
         }
 
@@ -353,16 +337,16 @@
     <header>
       <div class="container">
         <div class="topbar">
-          <span>Welcome to BrightFuture Academy</span>
-          <span>Admissions Open 2026</span>
+          <span>Welcome to Northview College</span>
+          <span>Admissions 2026 Open</span>
         </div>
 
         <nav class="nav">
-          <div class="brand">BrightFuture</div>
+          <div class="brand">Northview</div>
           <ul class="menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
+            <li><a href="#programs">Academics</a></li>
             <li><a href="#news">News</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -375,24 +359,24 @@
       <section class="hero" id="home">
         <div class="container hero-content">
           <div>
-            <h1>Shaping Bright Minds for a Better Tomorrow</h1>
+            <h1>Build Your Future with Excellence</h1>
             <p>
-              We provide a safe, inspiring, and high-quality learning environment where
-              students grow academically, socially, and creatively.
+              Northview College empowers students with academic rigor, personal growth,
+              and career-focused learning in a vibrant campus environment.
             </p>
             <div class="hero-actions">
-              <a class="cta btn-light" href="#programs">Explore Programs</a>
-              <a class="cta" href="#about">Learn More</a>
+              <a class="cta btn-light" href="#programs">Explore Courses</a>
+              <a class="cta" href="#about">About Us</a>
             </div>
           </div>
 
-          <div class="hero-card">
-            <h3>Why Parents Choose Us</h3>
-            <ul class="promo-list">
-              <li>✔ Modern classrooms</li>
-              <li>✔ Experienced teachers</li>
-              <li>✔ Strong academic focus</li>
-              <li>✔ Activity-based learning</li>
+          <div class="hero-panel">
+            <h3>Why Choose Us</h3>
+            <ul>
+              <li>✔ Industry-focused programs</li>
+              <li>✔ Experienced faculty</li>
+              <li>✔ Modern labs and libraries</li>
+              <li>✔ Strong student support</li>
             </ul>
           </div>
         </div>
@@ -401,10 +385,10 @@
       <section>
         <div class="container">
           <div class="stats">
-            <div class="stat"><strong>25+</strong>Years of Excellence</div>
-            <div class="stat"><strong>2000+</strong>Happy Students</div>
-            <div class="stat"><strong>90%</strong>Exam Success Rate</div>
-            <div class="stat"><strong>40+</strong>Expert Faculty</div>
+            <div class="stat"><strong>15K+</strong>Students</div>
+            <div class="stat"><strong>120+</strong>Faculty</div>
+            <div class="stat"><strong>40+</strong>Programs</div>
+            <div class="stat"><strong>95%</strong>Placement</div>
           </div>
         </div>
       </section>
@@ -412,10 +396,9 @@
       <section id="about">
         <div class="container">
           <div class="section-title">
-            <h2>About Our School</h2>
+            <h2>About the College</h2>
             <p>
-              BrightFuture Academy is committed to nurturing curiosity, confidence, and
-              character in every learner.
+              We foster innovation, leadership, and learning through a dynamic academic community.
             </p>
           </div>
 
@@ -423,26 +406,25 @@
             <div class="about-box">
               <h3>Our Mission</h3>
               <p>
-                To create a learning environment where children feel valued, challenged,
-                and inspired to reach their full potential.
+                To offer relevant education and transformative experiences that prepare students for
+                success in their careers and communities.
               </p>
               <ul>
-                <li>Holistic education for academic and personal growth</li>
-                <li>Strong moral and ethical values</li>
-                <li>Inclusive and supportive learning culture</li>
+                <li>Academic excellence and research mindset</li>
+                <li>Practical learning and student engagement</li>
+                <li>Values-driven and inclusive campus culture</li>
               </ul>
             </div>
 
             <div class="about-box">
-              <h3>What Makes Us Different</h3>
+              <h3>What Sets Us Apart</h3>
               <p>
-                We blend classroom excellence with extracurricular exploration, helping
-                students build skills beyond books and grades.
+                Our college combines classroom learning with real-world exposure, creativity, and mentorship.
               </p>
               <ul>
-                <li>STEM and innovation labs</li>
-                <li>Sports and arts development</li>
-                <li>Community and leadership programs</li>
+                <li>Career development and internship support</li>
+                <li>Innovation labs and digital learning</li>
+                <li>Student clubs, events, and leadership programs</li>
               </ul>
             </div>
           </div>
@@ -452,37 +434,34 @@
       <section id="programs">
         <div class="container">
           <div class="section-title">
-            <h2>Our Programs</h2>
+            <h2>Academic Programs</h2>
             <p>
-              We offer a range of programs designed to support every stage of student growth.
+              Our curriculum is designed to build knowledge, hands-on experience, and future readiness.
             </p>
           </div>
 
           <div class="cards">
             <div class="card">
-              <span class="badge">Primary</span>
-              <h3>Foundation Learning</h3>
+              <span class="badge">Undergraduate</span>
+              <h3>Bachelor's Programs</h3>
               <p>
-                Building strong literacy, numeracy, and confidence through engaging early
-                learning experiences.
+                Explore technical, business, and social science programs that help students begin strong careers.
               </p>
             </div>
 
             <div class="card">
-              <span class="badge">Middle School</span>
-              <h3>Academic Growth</h3>
+              <span class="badge">Professional</span>
+              <h3>Career-Oriented Courses</h3>
               <p>
-                A balanced curriculum that encourages inquiry, collaboration, and subject
-                excellence.
+                Gain practical skills in digital marketing, data analytics, finance, IT, and more.
               </p>
             </div>
 
             <div class="card">
-              <span class="badge">Senior School</span>
-              <h3>Career Readiness</h3>
+              <span class="badge">Support</span>
+              <h3>Student Services</h3>
               <p>
-                Preparing students for board exams, higher education, and future career
-                success.
+                We support students through mentoring, counseling, career guidance, and placement assistance.
               </p>
             </div>
           </div>
@@ -492,24 +471,23 @@
       <section id="news">
         <div class="container">
           <div class="section-title">
-            <h2>School News & Updates</h2>
+            <h2>News & Events</h2>
           </div>
 
           <div class="news-grid">
             <div class="card">
-              <h3>Upcoming Events</h3>
+              <h3>Upcoming Highlights</h3>
               <p>
-                Science Fair, Inter-school sports competition, and cultural day activities are
-                coming soon.
+                Annual tech fest, guest lectures, cultural events, and student innovation showcases are planned this semester.
               </p>
             </div>
 
             <div class="noticeboard">
               <h3>Notice Board</h3>
               <ul>
-                <li><span>Parent orientation program</span><span class="date-pill">Sep 30</span></li>
-                <li><span>School admission forms open</span><span class="date-pill">Oct 02</span></li>
-                <li><span>Annual sports week registration</span><span class="date-pill">Oct 08</span></li>
+                <li><span>Admission application deadline</span><span class="date-pill">Sep 25</span></li>
+                <li><span>Campus orientation session</span><span class="date-pill">Oct 03</span></li>
+                <li><span>Career fair registration open</span><span class="date-pill">Oct 10</span></li>
               </ul>
             </div>
           </div>
@@ -520,16 +498,16 @@
         <div class="container">
           <div class="section-title">
             <h2>Contact Us</h2>
-            <p>We would love to welcome your child into our learning community.</p>
+            <p>We welcome students, parents, and partners who want to learn more about the college.</p>
           </div>
 
           <div class="contact-wrap">
             <div class="info-box">
-              <h3>School Information</h3>
-              <p><strong>Address:</strong> 45 Learning Avenue, City Center</p>
-              <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-              <p><strong>Email:</strong> admissions@brightfuture.edu</p>
-              <p><strong>Hours:</strong> Mon - Fri, 8:00 AM - 3:00 PM</p>
+              <h3>College Information</h3>
+              <p><strong>Address:</strong> 80 Campus Avenue, Greenfield City</p>
+              <p><strong>Phone:</strong> +1 (555) 204-7788</p>
+              <p><strong>Email:</strong> admissions@northviewcollege.edu</p>
+              <p><strong>Office Hours:</strong> Mon - Fri, 9:00 AM - 5:00 PM</p>
             </div>
 
             <div class="feedback-form">
@@ -548,7 +526,7 @@
 
     <footer>
       <div class="container">
-        © 2026 BrightFuture Academy. All rights reserved.
+        © 2026 Northview College. All rights reserved.
       </div>
     </footer>
   </body>

@@ -1,22 +1,555 @@
-<h1>Demo head</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightFuture Academy</title>
+    <style>
+      :root {
+        --primary: #123d72;
+        --secondary: #f4b400;
+        --accent: #eaf2ff;
+        --text: #1d1d1d;
+        --muted: #5c6470;
+        --white: #ffffff;
+        --shadow: rgba(18, 61, 114, 0.12);
+      }
 
-<p>
-  This is for demo purpose and learn how to use git hub..
-  Now let me check ftp direct push from here to godaddy server..
-  
-</p>
+      * {
+        box-sizing: border-box;
+      }
 
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background: #f6f9ff;
+        line-height: 1.6;
+      }
 
-  <form action="#" method="post">
-    <h3>Feedback Form</h3>
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name"><br><br>
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br><br>
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-    <label for="message">Feedback:</label><br>
-    <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+      .container {
+        width: min(1120px, 90%);
+        margin: 0 auto;
+      }
 
-    <button type="submit">Submit</button>
-  </form>
+      header {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        font-size: 0.9rem;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0 22px;
+      }
+
+      .brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .menu {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu a {
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      .cta {
+        background: var(--secondary);
+        color: var(--primary);
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 700;
+        display: inline-block;
+      }
+
+      .hero {
+        background: linear-gradient(rgba(18, 61, 114, 0.82), rgba(18, 61, 114, 0.82)),
+          url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: var(--white);
+        padding: 100px 0;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        line-height: 1.1;
+        margin: 0 0 18px;
+      }
+
+      .hero p {
+        font-size: 1.07rem;
+        max-width: 620px;
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .btn-light {
+        background: var(--white);
+        color: var(--primary);
+      }
+
+      .hero-card {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero-card h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      .promo-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+      }
+
+      .promo-list li {
+        margin: 10px 0;
+        font-weight: 600;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        margin-bottom: 12px;
+      }
+
+      .section-title p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 20px;
+      }
+
+      .stat {
+        background: var(--white);
+        padding: 28px 20px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 10px 24px var(--shadow);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 2rem;
+        color: var(--primary);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        align-items: center;
+      }
+
+      .about-box {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 12px 25px var(--shadow);
+      }
+
+      .about-box ul {
+        margin: 18px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        gap: 26px;
+      }
+
+      .card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 28px 22px;
+        box-shadow: 0 10px 24px var(--shadow);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+
+      .badge {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--primary);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 26px;
+      }
+
+      .noticeboard {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 10px 24px var(--shadow);
+      }
+
+      .noticeboard ul {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+      }
+
+      .noticeboard li {
+        padding: 14px 0;
+        border-bottom: 1px solid #e9edf5;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .noticeboard li:last-child {
+        border-bottom: 0;
+      }
+
+      .date-pill {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .info-box,
+      .feedback-form {
+        background: var(--white);
+        padding: 28px;
+        border-radius: 18px;
+        box-shadow: 0 10px 24px var(--shadow);
+      }
+
+      .feedback-form form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .feedback-form input,
+      .feedback-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #dfe7f3;
+        font: inherit;
+      }
+
+      .feedback-form button {
+        border: none;
+        background: var(--primary);
+        color: var(--white);
+        padding: 14px 22px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      footer {
+        background: #0d2340;
+        color: var(--white);
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .hero-content,
+        .about-grid,
+        .news-grid,
+        .contact-wrap,
+        .cards,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .menu {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="topbar">
+          <span>Welcome to BrightFuture Academy</span>
+          <span>Admissions Open 2026</span>
+        </div>
+
+        <nav class="nav">
+          <div class="brand">BrightFuture</div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a class="cta" href="#contact">Apply Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-content">
+          <div>
+            <h1>Shaping Bright Minds for a Better Tomorrow</h1>
+            <p>
+              We provide a safe, inspiring, and high-quality learning environment where
+              students grow academically, socially, and creatively.
+            </p>
+            <div class="hero-actions">
+              <a class="cta btn-light" href="#programs">Explore Programs</a>
+              <a class="cta" href="#about">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <h3>Why Parents Choose Us</h3>
+            <ul class="promo-list">
+              <li>✔ Modern classrooms</li>
+              <li>✔ Experienced teachers</li>
+              <li>✔ Strong academic focus</li>
+              <li>✔ Activity-based learning</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="stats">
+            <div class="stat"><strong>25+</strong>Years of Excellence</div>
+            <div class="stat"><strong>2000+</strong>Happy Students</div>
+            <div class="stat"><strong>90%</strong>Exam Success Rate</div>
+            <div class="stat"><strong>40+</strong>Expert Faculty</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>About Our School</h2>
+            <p>
+              BrightFuture Academy is committed to nurturing curiosity, confidence, and
+              character in every learner.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-box">
+              <h3>Our Mission</h3>
+              <p>
+                To create a learning environment where children feel valued, challenged,
+                and inspired to reach their full potential.
+              </p>
+              <ul>
+                <li>Holistic education for academic and personal growth</li>
+                <li>Strong moral and ethical values</li>
+                <li>Inclusive and supportive learning culture</li>
+              </ul>
+            </div>
+
+            <div class="about-box">
+              <h3>What Makes Us Different</h3>
+              <p>
+                We blend classroom excellence with extracurricular exploration, helping
+                students build skills beyond books and grades.
+              </p>
+              <ul>
+                <li>STEM and innovation labs</li>
+                <li>Sports and arts development</li>
+                <li>Community and leadership programs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="programs">
+        <div class="container">
+          <div class="section-title">
+            <h2>Our Programs</h2>
+            <p>
+              We offer a range of programs designed to support every stage of student growth.
+            </p>
+          </div>
+
+          <div class="cards">
+            <div class="card">
+              <span class="badge">Primary</span>
+              <h3>Foundation Learning</h3>
+              <p>
+                Building strong literacy, numeracy, and confidence through engaging early
+                learning experiences.
+              </p>
+            </div>
+
+            <div class="card">
+              <span class="badge">Middle School</span>
+              <h3>Academic Growth</h3>
+              <p>
+                A balanced curriculum that encourages inquiry, collaboration, and subject
+                excellence.
+              </p>
+            </div>
+
+            <div class="card">
+              <span class="badge">Senior School</span>
+              <h3>Career Readiness</h3>
+              <p>
+                Preparing students for board exams, higher education, and future career
+                success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="news">
+        <div class="container">
+          <div class="section-title">
+            <h2>School News & Updates</h2>
+          </div>
+
+          <div class="news-grid">
+            <div class="card">
+              <h3>Upcoming Events</h3>
+              <p>
+                Science Fair, Inter-school sports competition, and cultural day activities are
+                coming soon.
+              </p>
+            </div>
+
+            <div class="noticeboard">
+              <h3>Notice Board</h3>
+              <ul>
+                <li><span>Parent orientation program</span><span class="date-pill">Sep 30</span></li>
+                <li><span>School admission forms open</span><span class="date-pill">Oct 02</span></li>
+                <li><span>Annual sports week registration</span><span class="date-pill">Oct 08</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>We would love to welcome your child into our learning community.</p>
+          </div>
+
+          <div class="contact-wrap">
+            <div class="info-box">
+              <h3>School Information</h3>
+              <p><strong>Address:</strong> 45 Learning Avenue, City Center</p>
+              <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+              <p><strong>Email:</strong> admissions@brightfuture.edu</p>
+              <p><strong>Hours:</strong> Mon - Fri, 8:00 AM - 3:00 PM</p>
+            </div>
+
+            <div class="feedback-form">
+              <h3>Feedback Form</h3>
+              <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 BrightFuture Academy. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
